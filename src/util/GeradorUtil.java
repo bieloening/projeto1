@@ -30,8 +30,13 @@ public class GeradorUtil {
        
         return gerarNumero(3) + "." + gerarNumero(3) + "." + gerarNumero(3) + "-" + gerarNumero(2);
     }
-    
-    
+    public String gerarCnpj(){
+        return gerarNumero(2) + "." + gerarNumero(3) + "." + gerarNumero(3) + "/" + gerarNumero(4) + "-" + gerarNumero(2) ;
+        
+    }
+    public String gerarTelefone(){
+        return "(48)" + "3" + gerarNumero(3) + "-" + gerarNumero(4);
+    }
   public double gerarSalario(){
        int numero = (int) (Math.random() * 100000);
       return numero;
@@ -39,9 +44,17 @@ public class GeradorUtil {
    
     public static void main(String[] args) {
        GeradorUtil util = new GeradorUtil();
+       
        String cpf = util.gerarCpf();
-       System.out.println("(CPF: " + cpf);
+       System.out.println("CPF: " + cpf);
+       
        String numero = util.gerarNumero(4);
-       System.out.println("Senha " + numero);
+       System.out.println("Senha: " + numero);
+       
+       String cnpj = util.gerarCnpj();
+       System.out.println("CNPJ: " + cnpj);
+       
+       String telefone = util.gerarTelefone();
+        System.out.println("Telefone fixo: " + telefone);
     }
 }
